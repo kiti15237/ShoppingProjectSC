@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ShopItem.h"
 
 @interface ShopTableViewController : UITableViewController
+
+@property NSMutableArray *shoppingList;
 
 @end

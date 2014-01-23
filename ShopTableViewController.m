@@ -7,12 +7,24 @@
 //
 
 #import "ShopTableViewController.h"
+#import "ShopAddItemViewController.h"
 
 @interface ShopTableViewController ()
 
 @end
 
 @implementation ShopTableViewController
+
+
+-(IBAction)unwindToList:(UIStoryboardSegue *)segue{
+    ShopAddItemViewController *source= [segue sourceViewController];
+    NSMutableArray *list= source.tempShoppingList;
+    if(list.count!=0){
+        [self.shoppingList addObjectsFromArray:list];
+        [self.tableView reloadData];
+    }
+}
+
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -23,9 +35,20 @@
     return self;
 }
 
+-(void)loadInitialData{
+    ShopItem *item1=[[ShopItem alloc]init];
+    item1.itemName= @"Milk";
+    [self.shoppingList addObject:item1];
+    ShopItem *item2=[[ShopItem alloc]init];
+    item2.itemName= @"Bread";
+    [self.shoppingList addObject:item2];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.shoppingList= [[NSMutableArray alloc]init];
+    [self loadInitialData];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -44,22 +67,23 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
+
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return [self.shoppingList count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"ShopPrototypeCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    ShopItem *item= [self.shoppingList objectAtIndex:indexPath.row];
+    cell.textLabel.text= item.itemName;
     
     // Configure the cell...
     

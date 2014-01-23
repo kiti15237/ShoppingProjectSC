@@ -10,4 +10,6 @@
 
 @interface ShopItem : NSObject
 
+@property NSString *itemName;
+
 @end
