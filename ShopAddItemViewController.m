@@ -15,18 +15,23 @@
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *doneButton;
 
-
 @property (weak, nonatomic) IBOutlet UITextField *textField;
+
+
+
+
 @end
 
 @implementation ShopAddItemViewController
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if(sender != self.doneButton) return;
+
     if(self.textField.text.length>0){
         self.addItem= [[ShopItem alloc]init];
         self.addItem.itemName= self.textField.text;
-        [self.tempShoppingList addObject:self.addItem];
+        self.addItem.bought=FALSE;
+        [self.shoppingList addObject:self.addItem];
     }
 }
 
@@ -42,7 +47,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.tempShoppingList= [[NSMutableArray alloc]init];
+    self.shoppingList= [[NSMutableArray alloc]init];
 	// Do any additional setup after loading the view.
 }
 
@@ -53,26 +58,13 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*-(IBAction)addAnotherItem:(id)sender{
-    UITextField *textField= (UITextField *)[self.view viewWithTag:1];
-    [textField setText: @""];
-    
-    if(self.textField.text.length>0){
-        ShopItem *item= [[ShopItem alloc]init];
-        item.itemName= self.textField.text;
-        [self.tempShoppingList addObject:item];
-        self.textField= nil;
-    }
-}*/
-
-
-
 
 
 - (IBAction)addAnotherItem:(id)sender {
     ShopItem *item= [[ShopItem alloc]init];
     item.itemName= self.textField.text;
-    [self.tempShoppingList addObject:item];
+    self.addItem.bought= FALSE;
+    [self.shoppingList addObject:item];
     self.textField.text= @"";
 }
 @end

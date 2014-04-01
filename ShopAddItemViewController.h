@@ -11,10 +11,11 @@
 
 @interface ShopAddItemViewController : UIViewController
 
+
 @property ShopItem *addItem;
-@property NSMutableArray *tempShoppingList;
+@property NSMutableArray *shoppingList;
+
 
 - (IBAction)addAnotherItem:(id)sender;
-
 
 @end

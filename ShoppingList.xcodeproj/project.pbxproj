@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E2A164918957A4B005FFB30 /* ShopHomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E2A164818957A4B005FFB30 /* ShopHomePageViewController.m */; };
 		1E57C24A1890783C00ACEDCD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E57C2491890783C00ACEDCD /* UIKit.framework */; };
 		1E57C24C1890783C00ACEDCD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E57C24B1890783C00ACEDCD /* Foundation.framework */; };
 		1E57C24E1890783C00ACEDCD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E57C24D1890783C00ACEDCD /* CoreGraphics.framework */; };
@@ -21,10 +22,10 @@
 		1E57C26A1890784000ACEDCD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E57C24B1890783C00ACEDCD /* Foundation.framework */; };
 		1E57C2721890784000ACEDCD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1E57C2701890784000ACEDCD /* InfoPlist.strings */; };
 		1E57C2751890784100ACEDCD /* ShoppingListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E57C2741890784100ACEDCD /* ShoppingListTests.m */; };
-		1E57C281189079B600ACEDCD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E57C280189079B600ACEDCD /* Main.storyboard */; };
 		1E57C287189086C100ACEDCD /* ShopTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E57C286189086C100ACEDCD /* ShopTableViewController.m */; };
 		1E5BAF5C1890893800FBC08C /* ShopAddItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E5BAF5B1890893800FBC08C /* ShopAddItemViewController.m */; };
 		1E5BAF5F18908BA100FBC08C /* ShopItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E5BAF5E18908BA100FBC08C /* ShopItem.m */; };
+		1E5EB7F718EB56BE00D34643 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E5EB7F618EB56BE00D34643 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1E2A164718957A4B005FFB30 /* ShopHomePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopHomePageViewController.h; sourceTree = "<group>"; };
+		1E2A164818957A4B005FFB30 /* ShopHomePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopHomePageViewController.m; sourceTree = "<group>"; };
 		1E57C2461890783C00ACEDCD /* ShoppingList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoppingList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E57C2491890783C00ACEDCD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1E57C24B1890783C00ACEDCD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -57,13 +60,13 @@
 		1E57C2711890784000ACEDCD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1E57C2731890784100ACEDCD /* ShoppingListTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShoppingListTests.h; sourceTree = "<group>"; };
 		1E57C2741890784100ACEDCD /* ShoppingListTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShoppingListTests.m; sourceTree = "<group>"; };
-		1E57C280189079B600ACEDCD /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		1E57C285189086C100ACEDCD /* ShopTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopTableViewController.h; sourceTree = "<group>"; };
 		1E57C286189086C100ACEDCD /* ShopTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopTableViewController.m; sourceTree = "<group>"; };
 		1E5BAF5A1890893800FBC08C /* ShopAddItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopAddItemViewController.h; sourceTree = "<group>"; };
 		1E5BAF5B1890893800FBC08C /* ShopAddItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopAddItemViewController.m; sourceTree = "<group>"; };
 		1E5BAF5D18908BA100FBC08C /* ShopItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopItem.h; sourceTree = "<group>"; };
 		1E5BAF5E18908BA100FBC08C /* ShopItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopItem.m; sourceTree = "<group>"; };
+		1E5EB7F618EB56BE00D34643 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +96,8 @@
 		1E57C23D1890783900ACEDCD = {
 			isa = PBXGroup;
 			children = (
+				1E2A164718957A4B005FFB30 /* ShopHomePageViewController.h */,
+				1E2A164818957A4B005FFB30 /* ShopHomePageViewController.m */,
 				1E5BAF5D18908BA100FBC08C /* ShopItem.h */,
 				1E5BAF5E18908BA100FBC08C /* ShopItem.m */,
 				1E5BAF5A1890893800FBC08C /* ShopAddItemViewController.h */,
@@ -132,7 +137,6 @@
 				1E57C2581890783D00ACEDCD /* ShopAppDelegate.h */,
 				1E57C2591890783E00ACEDCD /* ShopAppDelegate.m */,
 				1E57C2501890783D00ACEDCD /* Supporting Files */,
-				1E57C280189079B600ACEDCD /* Main.storyboard */,
 			);
 			path = ShoppingList;
 			sourceTree = "<group>";
@@ -147,6 +151,7 @@
 				1E57C25B1890783E00ACEDCD /* Default.png */,
 				1E57C25D1890783E00ACEDCD /* Default@2x.png */,
 				1E57C25F1890783E00ACEDCD /* Default-568h@2x.png */,
+				1E5EB7F618EB56BE00D34643 /* Main.storyboard */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -245,7 +250,7 @@
 				1E57C25C1890783E00ACEDCD /* Default.png in Resources */,
 				1E57C25E1890783E00ACEDCD /* Default@2x.png in Resources */,
 				1E57C2601890783E00ACEDCD /* Default-568h@2x.png in Resources */,
-				1E57C281189079B600ACEDCD /* Main.storyboard in Resources */,
+				1E5EB7F718EB56BE00D34643 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,6 +290,7 @@
 				1E57C287189086C100ACEDCD /* ShopTableViewController.m in Sources */,
 				1E5BAF5C1890893800FBC08C /* ShopAddItemViewController.m in Sources */,
 				1E5BAF5F18908BA100FBC08C /* ShopItem.m in Sources */,
+				1E2A164918957A4B005FFB30 /* ShopHomePageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

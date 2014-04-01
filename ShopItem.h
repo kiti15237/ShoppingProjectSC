@@ -11,5 +11,7 @@
 @interface ShopItem : NSObject
 
 @property NSString *itemName;
+@property BOOL bought;
+
 
 @end

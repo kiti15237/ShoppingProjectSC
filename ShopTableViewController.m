@@ -8,8 +8,14 @@
 
 #import "ShopTableViewController.h"
 #import "ShopAddItemViewController.h"
+#import "ShopHomePageViewController.h"
 
 @interface ShopTableViewController ()
+
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *goToHome;
+
+
+
 
 @end
 
@@ -18,13 +24,21 @@
 
 -(IBAction)unwindToList:(UIStoryboardSegue *)segue{
     ShopAddItemViewController *source= [segue sourceViewController];
-    NSMutableArray *list= source.tempShoppingList;
+    NSMutableArray *list= source.shoppingList;
     if(list.count!=0){
         [self.shoppingList addObjectsFromArray:list];
         [self.tableView reloadData];
     }
 }
 
+/*
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if(sender==self.goToHome){
+        ShopHomePageViewController *homeController= (ShopHomePageViewController *)segue.destinationViewController;
+        homeController.shoppingList= self.shoppingList;
+    }
+}
+*/
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -36,19 +50,15 @@
 }
 
 -(void)loadInitialData{
-    ShopItem *item1=[[ShopItem alloc]init];
-    item1.itemName= @"Milk";
-    [self.shoppingList addObject:item1];
-    ShopItem *item2=[[ShopItem alloc]init];
-    item2.itemName= @"Bread";
-    [self.shoppingList addObject:item2];
+
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.shoppingList= [[NSMutableArray alloc]init];
-    [self loadInitialData];
+    if(self.shoppingList==nil){
+        self.shoppingList= [[NSMutableArray alloc]init];
+    }
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -84,6 +94,12 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     ShopItem *item= [self.shoppingList objectAtIndex:indexPath.row];
     cell.textLabel.text= item.itemName;
+    
+    if(item.bought){
+        cell.accessoryType=UITableViewCellAccessoryCheckmark;
+    }else{
+        cell.accessoryType=UITableViewCellAccessoryNone;
+    }
     
     // Configure the cell...
     
@@ -133,6 +149,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    ShopItem *selectedItem= [self.shoppingList objectAtIndex:indexPath.row];
+    selectedItem.bought= !selectedItem.bought;
+    [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+    
     // Navigation logic may go here. Create and push another view controller.
     /*
      <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
